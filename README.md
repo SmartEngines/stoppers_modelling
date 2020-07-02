@@ -20,10 +20,12 @@ Description of each source code file and data directory follows.
 
 6\. `comparison.ipynb` - Jupyter notebook with code for comparing the stopping methods and constructing plots (Figures 3, 4, and 5).
 
+7\. `prepare_ic15_yvt.ipynb` - Jupyter notebook with code for preparing IC15-Train and YVT datasets.
+
 
 ## Overview of data directories
 
-1\. `data_<DATASET>/` - directory with text field recognition results, used as a dataset for the experiments. Fields were taken from [[MIDV-500 dataset](http://www.computeroptics.smr.ru/eng/KO/Annot/KO43-5/430515e.html)] and [[MIDV-2019 dataset](https://arxiv.org/abs/1910.04009)], recognized using text field recognition subsystem of [[Smart IDReader](https://doi.org/10.1109/ICDAR.2017.347)]. Fields are grouped into four field types (`data_<DATASET>/date` - numeric dates, `data_<DATASET>/docnum` - document numbers, `data_<DATASET>/latin` - Latin name components, `data_<DATASET>/mrz` - MRZ lines). Each field clip is stored in a Pickle format and has the filename format `<FIELDTYPE>_<CLIPID>_<FIELDNAME>.pkl`. 
+1\. `data_<DATASET>/` - directory with text field recognition results, used as a dataset for the experiments. Document fields were taken from [[MIDV-500 dataset](http://www.computeroptics.smr.ru/eng/KO/Annot/KO43-5/430515e.html)] and [[MIDV-2019 dataset](https://arxiv.org/abs/1910.04009)], recognized using text field recognition subsystem of [[Smart IDReader](https://doi.org/10.1109/ICDAR.2017.347)]. Fields are grouped into four field types (`data_<DATASET>/date` - numeric dates, `data_<DATASET>/docnum` - document numbers, `data_<DATASET>/latin` - Latin name components, `data_<DATASET>/mrz` - MRZ lines). Each field clip is stored in a Pickle format and has the filename format `<FIELDTYPE>_<CLIPID>_<FIELDNAME>.pkl`. Arbitrary text objects were taken from [[IC15 Text in Videos dataset](https://doi.org/10.1109/ICDAR.2015.7333942)] and [[YouTube Video Text dataset](https://doi.org/10.1109/WACV.2014.6836024)], and recognized using the pretrained @clovaai model [[available here](https://github.com/clovaai/deep-text-recognition-benchmark)]. Arbitrary text objects have field type `none`.
   The Pickle data format for each field clip is the following:
   ```
   {
